@@ -1,11 +1,7 @@
 # oblium-api-java
-Java client for the oblium TCG API
+This is a Java wrapper/client for the [Oblium TCG API](https://www.postman.com/telecoms-saganist-93127602/workspace/oblium-api-public/collection/24236476-7e903d99-000f-4cc1-a132-f669cd82a5e2)
 
-## Table of Contents
-1. **[Examples](#Examples)**
-2. **[Todo-List](#Todo)**
-
-##Examples
+## Examples
 ```Java
 
 public class Example {
@@ -29,7 +25,7 @@ public class Example {
     }
 }
 ```
-#Todo
+## Todo
 - [x] First commit
 - [ ] Build all requests
 - [ ] Write all the documentation
