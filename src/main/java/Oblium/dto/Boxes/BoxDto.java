@@ -1,16 +1,9 @@
-package Oblium.api;
-
-import Oblium.dto.Users.TotalUserInfo;
-import Oblium.dto.Users.UserInfo;
-import Oblium.http.HttpRequestImp;
-
-import java.io.IOException;
-import java.util.HashMap;
+package Oblium.dto.Boxes;
 
 /**
  * MIT License
  * <p>
- * Copyright (c) 2023 Alex Canton
+ * Copyright (c) 21.07.2023 Alex Canton
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,28 +24,20 @@ import java.util.HashMap;
  * SOFTWARE.
  */
 
-public class UsersAPI extends AbstractAPI {
+public class BoxDto {
 
-    /**
-     *
-     * @return
-     * @throws IOException
-     */
-    public static TotalUserInfo getTotalUser() throws IOException {
-        return getData(new HttpRequestImp().Request( new HashMap<>(), "get_users_count"), TotalUserInfo.class);
-    }
+    public String product_id;
+    public String box_type;
+    public String creation_date;
 
-    /**
-     *
-     * @param userId
-     * @return
-     * @throws IOException
-     */
-    public static UserInfo getUserInfo(Integer userId) throws IOException {
+    public BoxDto() {}
 
-        HashMap<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("user_id", userId.toString());
-
-        return getData(new HttpRequestImp().Request(queryParameters, "get_user"), UserInfo.class);
+    @Override
+    public String toString() {
+        return "BoxDto{" +
+                "product_id='" + product_id + '\'' +
+                ", box_type='" + box_type + '\'' +
+                ", creation_date='" + creation_date + '\'' +
+                '}';
     }
 }

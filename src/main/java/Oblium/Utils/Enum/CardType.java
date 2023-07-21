@@ -1,11 +1,6 @@
-package Oblium.api;
+package Oblium.Utils.Enum;
 
-import Oblium.dto.Users.TotalUserInfo;
-import Oblium.dto.Users.UserInfo;
-import Oblium.http.HttpRequestImp;
-
-import java.io.IOException;
-import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * MIT License
@@ -30,29 +25,19 @@ import java.util.HashMap;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+public enum CardType {
 
-public class UsersAPI extends AbstractAPI {
+    PASSIVE("Passive"),
+    ATTACK("Attack"),
+    SPECIAL("Special"),
+    SHIELD("Shield"),
+    SPELL("Spell"),
+    SECRET("Secret"),
+    ULTIMATE("Ultimate");
 
-    /**
-     *
-     * @return
-     * @throws IOException
-     */
-    public static TotalUserInfo getTotalUser() throws IOException {
-        return getData(new HttpRequestImp().Request( new HashMap<>(), "get_users_count"), TotalUserInfo.class);
-    }
+    @JsonValue
+    private final String type;
 
-    /**
-     *
-     * @param userId
-     * @return
-     * @throws IOException
-     */
-    public static UserInfo getUserInfo(Integer userId) throws IOException {
+    CardType(String type) { this.type = type; }
 
-        HashMap<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("user_id", userId.toString());
-
-        return getData(new HttpRequestImp().Request(queryParameters, "get_user"), UserInfo.class);
-    }
 }

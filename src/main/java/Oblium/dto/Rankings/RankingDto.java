@@ -1,5 +1,29 @@
 package Oblium.dto.Rankings;
 
+/**
+ * MIT License
+ * <p>
+ * Copyright (c) 2023 Alex Canton
+ * <p>
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * <p>
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * <p>
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 public class RankingDto {
 
     public String id;
@@ -17,111 +41,6 @@ public class RankingDto {
     public String rank;
 
     public RankingDto() {}
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
-    public String getTest_account() {
-        return test_account;
-    }
-
-    public void setTest_account(String test_account) {
-        this.test_account = test_account;
-    }
-
-    public String getEnergy() {
-        return energy;
-    }
-
-    public void setEnergy(String energy) {
-        this.energy = energy;
-    }
-
-    public String getGold() {
-        return gold;
-    }
-
-    public void setGold(String gold) {
-        this.gold = gold;
-    }
-
-    public String getOblium() {
-        return oblium;
-    }
-
-    public void setOblium(String oblium) {
-        this.oblium = oblium;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
-
-    public String getChampion_token() {
-        return champion_token;
-    }
-
-    public void setChampion_token(String champion_token) {
-        this.champion_token = champion_token;
-    }
-
-    public String getDeck_id() {
-        return deck_id;
-    }
-
-    public void setDeck_id(String deck_id) {
-        this.deck_id = deck_id;
-    }
-
-    public String getChampion_id() {
-        return champion_id;
-    }
-
-    public void setChampion_id(String champion_id) {
-        this.champion_id = champion_id;
-    }
-
-    public String getWeapon_id() {
-        return weapon_id;
-    }
-
-    public void setWeapon_id(String weapon_id) {
-        this.weapon_id = weapon_id;
-    }
-
-    public String getRank() {
-        return rank;
-    }
-
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
 
     @Override
     public String toString() {

@@ -1,11 +1,6 @@
-package Oblium.api;
+package Oblium.Utils.Enum;
 
-import Oblium.dto.Users.TotalUserInfo;
-import Oblium.dto.Users.UserInfo;
-import Oblium.http.HttpRequestImp;
-
-import java.io.IOException;
-import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * MIT License
@@ -30,29 +25,14 @@ import java.util.HashMap;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+public enum CardSchool {
 
-public class UsersAPI extends AbstractAPI {
+    SPELL("Spell"),
+    PHYSICAL("Physical");
 
-    /**
-     *
-     * @return
-     * @throws IOException
-     */
-    public static TotalUserInfo getTotalUser() throws IOException {
-        return getData(new HttpRequestImp().Request( new HashMap<>(), "get_users_count"), TotalUserInfo.class);
-    }
+    @JsonValue
+    private final String school;
 
-    /**
-     *
-     * @param userId
-     * @return
-     * @throws IOException
-     */
-    public static UserInfo getUserInfo(Integer userId) throws IOException {
+    CardSchool(String school) { this.school = school; }
 
-        HashMap<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("user_id", userId.toString());
-
-        return getData(new HttpRequestImp().Request(queryParameters, "get_user"), UserInfo.class);
-    }
 }
