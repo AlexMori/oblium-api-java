@@ -6,7 +6,7 @@ This is a Java wrapper/client for the [Oblium TCG API](https://www.postman.com/t
 
 public class Example {
 
-    public static void main (String[] args) throws IOException, URISyntaxException {
+    public static void main (String[] args) throws IOException {
 
         String userObliumAPIKey = args[0];
 
@@ -18,10 +18,21 @@ public class Example {
         UserInfo userInfo =  obliumClient.getUserInfo(1);
         TotalUserInfo totalUserInfo = obliumClient.getTotalUserInfo();
         RankingsDto rankingsDto = obliumClient.getRankings();
+        MatchesDto matchesDto = obliumClient.getListMatches();
+
+        List<CardMatchDto> cardsMatch = obliumClient.getCardsMatch(1);
+        List<BoxDto> boxesList = obliumClient.getBoxesTypes(obliumClient.DEFAULT_OFFSET, obliumClient.DEFAULT_COUNT);
+        List<CardDto> cardList = obliumClient.getCardList(obliumClient.DEFAULT_OFFSET, obliumClient.DEFAULT_COUNT);
 
         System.out.println(totalUserInfo);
         System.out.println(userInfo);
         System.out.println(rankingsDto.toString());
+
+        cardsMatch.forEach(System.out::println);
+        boxesList.forEach(System.out::println);
+        cardList.forEach(System.out::println);
+
+
     }
 }
 ```
